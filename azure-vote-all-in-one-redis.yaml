@@ -29,7 +29,7 @@ spec:
             cpu: 500m
             memory: 512Mi
 
-# Service to connect to backend
+# Internal service for the Redis instance
 ---
 apiVersion: v1
 kind: Service
@@ -79,6 +79,7 @@ spec:
           value: "azure-vote-back"
 
 # LB for front end to distribute traffic between front end pods
+# External service to access the Azure Vote application from the internet
 ---
 apiVersion: v1
 kind: Service
